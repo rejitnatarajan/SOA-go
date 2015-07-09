@@ -1,37 +1,8 @@
 Description
 ===========
 
+This project demonstrates, how JSON-RPC can be used in a Service Oriented Architecure instead of XML-like WSDL.
+
+[Imgur](http://i.imgur.com/GevMfU6.jpg)
 
 
-
-
-
-
-
-Diagram
-=======
-`
-        +------------+             Lookup                 +-------------------+
-        |  Client    |             TLS Handshake         1|Server/Registry    |
-        |------------+----------------------------------->|-------------------|
-        |            |                                    |                   |
-        |            <------------------------------------+  Lookup()         |
-        | Add(2,3)   | 2          Response                |  AddtoGreenPages()|
-        |            |                         +--------->|                   |
-        +--+---------+                         |          +-------------------+
-           |       ^                           |
-           |       |4                          |
-           |       |                           |
-           |       |                           |
-           |       |                           |
-   JsonRpc |       |Response                   |
-           |       |               +----------+|
-   Request |       |               | Provider ||
-           |       |               |----------|+
-           |       |               |          |
-           |       +--------------+|          |
-           |                       |  Add(2,3)|
-           |                       |          |
-           |                     3 | Result=5 |
-           +---------------------->+----------+
-`
